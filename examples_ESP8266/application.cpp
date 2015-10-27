@@ -25,6 +25,21 @@ void printArray(byte output[])
   Serial.println();
 }
 
+void printArray(byte output[], int len)
+{
+  for (int i = 0; i < len; i++)
+  {
+    if (output[i] < 0x10)
+    {
+      Serial.print("0");
+    }
+    Serial.print(output[i], HEX);
+    Serial.print(" ");
+  }
+  Serial.println();
+}
+
+
 byte *encrypt( byte *dataIn , int len ) {
 
     unsigned int memsize = ((len/8)+1)*8; // round to the upper 8 byte size
@@ -151,8 +166,7 @@ void sysReady() {
     
         byte *b = encrypt ( (byte *)st, strlen(st) );
        
-        //Serial.println((char *)b);
-
+        printArray( b , strlen(st) );
         
         Serial.println("-------------------------------");
         Serial.println("------Decryption test-----------------");
@@ -160,7 +174,6 @@ void sysReady() {
         byte *cb = decrypt( b , strlen(st) );
     
         Serial.println((char *)cb); 
-
         
 }
 
