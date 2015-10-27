@@ -1,16 +1,15 @@
 Please see the full documentation at http://spaniakos.github.io/ArduinoDES
 
-ArduinoDES
-==========
+DES_Library
+===========
 
-DES and Triples DES encryption and decryption library for the Arduino microcontroller platform.
-This code was ported from the AVR-Crypto-Lib (http://www.das-labor.org/wiki/AVR-Crypto-Lib).
+This project is a fork from ArduinoDES project that implements a DES and Triple DES encryption and
+decryption library for the Arduino and Rpi.
 
-To install the library, download and copy the files into a subfolder (e.g. "DES") in the 
-"libraries" folder of your Arduino development environment.
+I've made some changes so that this library can be used and compiled in ESP8266 Sming Framework 
+based projects.
 
-The library was tested on an Arduino Leonardo and works on an Intel Galileo board, too (thanks spaniakos).
-
+For the original library and instructions, please refer to https://github.com/Octoate/ArduinoDES.git
 
 Usage
 =====
@@ -18,40 +17,16 @@ Usage
 It is possible to encrypt and decrypt messages with the DES or Triples DES crypto algorithms.
 Have a look at the example code for more information.
 
-### Raspberry  pi
-install
+To use in Sming framework, just copy the DES.cpp file for the **app** directory, and the include files **DES.h** and **DES_config.h** for the **include** directory.
+
+On the main application include the DES.h file, and the encryption and decryption API is now available.
+
 ```
-sudo make install
-cd examples_Rpi
-make
+#include <SmingCore/SmingCore.h>
+#include <DES.h>
 ```
 
-What to do after changes to the library
-```
-sudo make clean
-sudo make install
-cd examples_Rpi
-make clean
-make
-```
-
-What to do after changes to a sketch
-```
-cd examples_Rpi
-make <sketch>
-
-or 
-make clean
-make
-```
-
-How to start a sketch
-```
-cd examples_Rpi
-sudo ./<sketch>
-```
-
-
+Under the directory **examples_ESP8266** there is a example **application.cpp* file that mimics the original example.
 
 License
 =======

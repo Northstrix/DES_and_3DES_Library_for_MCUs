@@ -31,7 +31,8 @@
 	#define printf_P printf
 	#define PSTR(x) (x)
 #else
+#if !defined(SMING_VERSION)
 	#include <avr/pgmspace.h>
 #endif
-
+#endif
 #endif
