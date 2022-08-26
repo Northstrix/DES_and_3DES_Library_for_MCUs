@@ -1,5 +1,5 @@
 /*
-Triple-DES encrypt and decrypt with key incrementation example for DES_and_3DES_Library_for_MCUs
+Triple-DES encrypt and decrypt example for DES_and_3DES_Library_for_MCUs
 This code is distributed under the General Public License v3.0
 © Copyright Maxim Bortnikov 2022
 For more information please visit:
