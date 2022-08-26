@@ -475,9 +475,6 @@ return true;
 void DES::tdesCbcEncipher(byte* in,byte* out)
 {
   #if defined(DES_PRINT)
-	printf_P(PSTR("\n"));
-	printf_P(PSTR("====== Triple-DES CBC encipher test ======\n"));
-	printf_P(PSTR("Encrypt..."));
   #endif
   for (int i = 0; i < size; i += 8)
   {
@@ -508,9 +505,7 @@ void DES::tdesCbcEncipher(byte* in,byte* out)
 void DES::tdesCbcDecipher(byte* in,byte* out)
 {
   #if defined(DES_PRINT)
-	printf_P(PSTR("\n"));
-	printf_P(PSTR("====== Triple-DES CBC decipher test ======\n"));
-	printf_P(PSTR("Decrypt..."));
+
   #endif
   for (int i = 0; i < size; i += 8)
   {
@@ -534,34 +529,8 @@ void DES::tdesCbcDecipher(byte* in,byte* out)
 	printArray((byte*)out,(bool)true);
   #endif
 }
+\
 
-/******************************************************************************/
-
-void DES::printArray(byte output[],bool p_pad)
-{
-uint8_t i,j;
-uint8_t loops = size/8;
-uint8_t outp = 8;
-for (j = 0; j < loops; j += 1){
-  if (p_pad && (j == (loops  - 1)) ) { outp = 8 - pad; }
-  for (i = 0; i < outp; i++)
-  {
-    printf_P(PSTR("%c"),output[j*8 + i]);
-  }
-}
-  printf_P(PSTR("\n"));
-}
-
-/******************************************************************************/
-
-void DES::printArray(byte output[],int sizel)
-{
-  for (int i = 0; i < sizel; i++)
-  {
-    printf_P(PSTR("%x"),output[i]);
-  }
-  printf_P(PSTR("\n"));
-}
 
 /******************************************************************************/
 

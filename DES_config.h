@@ -32,7 +32,7 @@
 	#define PSTR(x) (x)
 #else
 #if !defined(SMING_VERSION)
-	#include <avr/pgmspace.h>
+//	#include <avr/pgmspace.h>
 #endif
 #endif
 #endif
