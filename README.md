@@ -1,3 +1,9 @@
+Changes in the fork <b>DES_and_3DES_Library_for_MCUs </b> by <b>Northstrix</b>:
+1) Made it compatible with the ESP32, Raspberry Pi Pico, and STM32F103C8T6 by removing several unused lines;
+2) Removed unused examples and added the new ones.
+
+
+
 Please see the full documentation at http://spaniakos.github.io/ArduinoDES
 
 DES_Library
